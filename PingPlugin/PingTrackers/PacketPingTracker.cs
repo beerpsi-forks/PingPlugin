@@ -39,8 +39,8 @@ public class PacketPingTracker : PingTracker
     {
         while (!token.IsCancellationRequested)
         {
-            NextRTTCalculation(networkModuleRtt);
             await Task.Delay(TimeSpan.FromSeconds(10), token);
+            NextRTTCalculation(networkModuleRtt);
         }
     }
 
